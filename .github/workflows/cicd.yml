@@ -31,7 +31,7 @@ jobs:
 
       - name: Setup Android signing
         run: |
-           echo "${{ secrets.KEYSTORE }}" > back2learnapp.asc   
+           echo "${{ secrets.KEYSTORE }}" > keystore.asc   
            gpg -d --passphrase "${{ secrets.KEYSTORE_PASSWORD }}" --batch back2learnapp.asc > ./TestMobileApp/TestMobileApp.Android/keystore.jks
 
 #      - name: Set iOS version
