@@ -30,7 +30,9 @@ jobs:
 #          api-private-key: ${{ secrets.APPSTORE_PRIVATE_KEY }}  
 
       - name: Setup Android signing
-        run: (echo ${{ secrets.KEYSTORE }} | base64 — decode) > ./TestMobileApp/TestMobileApp.Android/keystore.jks
+         run: |   
+           echo "${{ secrets.KEYSTORE }}" > back2learnapp.asc   
+           gpg -d --passphrase "${{ secrets.KEYSTORE_PASSWORD }}" --batch back2learnapp.asc > ./TestMobileApp/TestMobileApp.Android/keystore.jks
 
 #      - name: Set iOS version
 #        run: |
