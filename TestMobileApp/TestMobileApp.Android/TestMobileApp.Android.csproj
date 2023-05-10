@@ -39,7 +39,7 @@
     <BundleAssemblies>false</BundleAssemblies>
     <AndroidEnableMultiDex>true</AndroidEnableMultiDex>
     <AndroidKeyStore>true</AndroidKeyStore>
-    <AndroidSigningKeyStore>false</AndroidSigningKeyStore>
+    <AndroidSigningKeyStore>true</AndroidSigningKeyStore>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -56,7 +56,7 @@
     <BundleAssemblies>false</BundleAssemblies>
     <AndroidEnableMultiDex>true</AndroidEnableMultiDex>
     <AndroidKeyStore>true</AndroidKeyStore>
-    <AndroidSigningKeyStore>false</AndroidSigningKeyStore>
+    <AndroidSigningKeyStore>true</AndroidSigningKeyStore>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Mono.Android" />
