@@ -47,8 +47,8 @@ jobs:
           version-code: ${{ github.run_number }}
           print-file: true
           
-      - name: Setup Java JDK
-        uses: actions/setup-java@v1.4.4
+  #    - name: Setup Java JDK
+  #      uses: actions/setup-java@v1.4.4
 
       - name: Restore NuGet packages
         run: nuget restore
@@ -57,4 +57,6 @@ jobs:
 #        run: MSBuild /t:Build /p:Configuration=Release /p:Platform=iPhone /p:BuildIpa=true ./PDFDemo.iOS/PDFDemo.iOS.csproj
         
       - name: Build Android
-        run: MSBuild /t:SignAndroidPackage /p:Configuration=Release /p:AndroidPackageFormat=apk /p:AndroidKeyStore=true /p:AndroidSigningKeyAlias=testcicd /p:AndroidSigningKeyPass=${{ secrets.KEYSTORE_PASSWORD }} /p:AndroidSigningKeyStore=keystore.jks /p:AndroidSigningStorePass=${{ secrets.KEYSTORE_PASSWORD }} ./TestMobileApp/TestMobileApp.Android/TestMobileApp.Android.csproj      
+        run: |
+          java -version
+          MSBuild /t:SignAndroidPackage /p:Configuration=Release /p:AndroidPackageFormat=apk /p:AndroidKeyStore=true /p:AndroidSigningKeyAlias=testcicd /p:AndroidSigningKeyPass=${{ secrets.KEYSTORE_PASSWORD }} /p:AndroidSigningKeyStore=keystore.jks /p:AndroidSigningStorePass=${{ secrets.KEYSTORE_PASSWORD }} ./TestMobileApp/TestMobileApp.Android/TestMobileApp.Android.csproj      
