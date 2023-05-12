@@ -46,6 +46,9 @@ jobs:
           version-name: ${{ secrets.APP_VERSION }}
           version-code: ${{ github.run_number }}
           print-file: true
+          
+      - name: Setup Java JDK
+        uses: actions/setup-java@v1.4.4
 
       - name: Restore NuGet packages
         run: nuget restore
