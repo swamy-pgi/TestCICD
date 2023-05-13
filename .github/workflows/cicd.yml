@@ -11,6 +11,14 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+        
+      - name: Install Homebrew
+        run: |
+          /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+      - name: Install Java SDK
+        run: |
+         brew update
+         brew install --cask adoptopenjdk11
 
 #      - name: Setup iOS Certificates
 #        uses: apple-actions/import-codesign-certs@v1
